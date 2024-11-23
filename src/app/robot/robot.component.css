@@ -7,6 +7,15 @@
   width: 500px;
 }
 
+.instructions {
+  background-color: #2a3538;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 16px;
+  margin-bottom: 10px;
+  padding: 8px;
+}
+
 .robot-table {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
