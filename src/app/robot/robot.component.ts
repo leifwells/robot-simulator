@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { TileComponent } from '../tile/tile.component';
@@ -39,5 +39,23 @@ export class RobotComponent {
 
   report(): void {
     this.gameService.makeReport();
+  }
+
+  @HostListener('document:keyup', ['$event'])
+  handleKeyboardEvent(event: KeyboardEvent): void {
+    switch (event.key) {
+      case 'ArrowUp':
+        this.moveRobot();
+        break;
+      case 'ArrowLeft':
+        this.rotateLeft();
+        break;
+      case 'ArrowRight':
+        this.rotateRight();
+        break;
+      case 'r':
+        this.report();
+        break;
+    }
   }
 }
