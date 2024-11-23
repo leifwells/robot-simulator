@@ -1,0 +1,67 @@
+<div
+  class="tile-container"
+  [ngClass]="{ 'tile-container-hover': !tileData.isActive && isHovered }"
+  (click)="setActiveTile(tileData)"
+  (mouseenter)="isHovered = true"
+  (mouseleave)="isHovered = false"
+>
+  <div *ngIf="tileData.isActive === true">
+    <div class="row1">
+      <div
+        [ngStyle]="{
+          color: tileData.direction === 'north' ? '#28b8bc' : '#2a3538'
+        }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="north"
+          fontIcon="expand_less"
+        ></mat-icon>
+      </div>
+    </div>
+    <div class="row2">
+      <div
+        [ngStyle]="{
+          color: tileData.direction === 'west' ? '#28b8bc' : '#2a3538'
+        }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="west"
+          fontIcon="chevron_left"
+        ></mat-icon>
+      </div>
+      <div>
+        <mat-icon
+          aria-hidden="false"
+          aria-label="robot icon"
+          fontIcon="smart_toy"
+        ></mat-icon>
+      </div>
+      <div
+        [ngStyle]="{
+          color: tileData.direction === 'east' ? '#28b8bc' : '#2a3538'
+        }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="east"
+          fontIcon="chevron_right"
+        ></mat-icon>
+      </div>
+    </div>
+    <div class="row3">
+      <div
+        [ngStyle]="{
+          color: tileData.direction === 'south' ? '#28b8bc' : '#2a3538'
+        }"
+      >
+        <mat-icon
+          aria-hidden="false"
+          aria-label="south"
+          fontIcon="expand_more"
+        ></mat-icon>
+      </div>
+    </div>
+  </div>
+</div>

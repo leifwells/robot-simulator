@@ -1,0 +1,32 @@
+.tile-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  background-color: #2a3538;
+  border: 1px solid #6e6e6e;
+  color: #28b8bc;
+  height: 100px;
+  width: 100px;
+}
+
+.tile-container-hover {
+  background-color: #28b8bc;
+}
+
+.row1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.row2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.row3 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

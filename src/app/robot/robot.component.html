@@ -1,0 +1,25 @@
+<div class="robot-container">
+  <div class="robot-table">
+    <app-tile
+      *ngFor="let items of data; let i = index"
+      [tileData]="data[i]"
+      (tileClicked)="tileClicked($event)"
+    ></app-tile>
+  </div>
+  <div class="controls">
+    <div class="controls-row">
+      <button mat-raised-button color="success" (click)="rotateLeft()">
+        Left
+      </button>
+      <button mat-raised-button color="success" (click)="moveRobot()">
+        Move
+      </button>
+      <button mat-raised-button color="success" (click)="rotateRight()">
+        Right
+      </button>
+    </div>
+    <div class="controls-row">
+      <button mat-raised-button (click)="report()">Report</button>
+    </div>
+  </div>
+</div>
