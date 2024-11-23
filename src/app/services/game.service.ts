@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { GameData } from '../types/types';
+import { Direction } from '../types/enums';
 
 @Injectable({
   providedIn: 'root',
@@ -12,35 +13,35 @@ export class GameService {
 
   initGameData(): Array<GameData> {
     return [
-      { x: 0, y: 4, direction: 'north', isActive: false },
-      { x: 1, y: 4, direction: 'north', isActive: false },
-      { x: 2, y: 4, direction: 'north', isActive: false },
-      { x: 3, y: 4, direction: 'north', isActive: false },
-      { x: 4, y: 4, direction: 'north', isActive: false },
+      { x: 0, y: 4, direction: Direction.NORTH, isActive: false },
+      { x: 1, y: 4, direction: Direction.NORTH, isActive: false },
+      { x: 2, y: 4, direction: Direction.NORTH, isActive: false },
+      { x: 3, y: 4, direction: Direction.NORTH, isActive: false },
+      { x: 4, y: 4, direction: Direction.NORTH, isActive: false },
 
-      { x: 0, y: 3, direction: 'north', isActive: false },
-      { x: 1, y: 3, direction: 'north', isActive: false },
-      { x: 2, y: 3, direction: 'north', isActive: false },
-      { x: 3, y: 3, direction: 'north', isActive: false },
-      { x: 4, y: 3, direction: 'north', isActive: false },
+      { x: 0, y: 3, direction: Direction.NORTH, isActive: false },
+      { x: 1, y: 3, direction: Direction.NORTH, isActive: false },
+      { x: 2, y: 3, direction: Direction.NORTH, isActive: false },
+      { x: 3, y: 3, direction: Direction.NORTH, isActive: false },
+      { x: 4, y: 3, direction: Direction.NORTH, isActive: false },
 
-      { x: 0, y: 2, direction: 'north', isActive: false },
-      { x: 1, y: 2, direction: 'north', isActive: false },
-      { x: 2, y: 2, direction: 'north', isActive: false },
-      { x: 3, y: 2, direction: 'north', isActive: false },
-      { x: 4, y: 2, direction: 'north', isActive: false },
+      { x: 0, y: 2, direction: Direction.NORTH, isActive: false },
+      { x: 1, y: 2, direction: Direction.NORTH, isActive: false },
+      { x: 2, y: 2, direction: Direction.NORTH, isActive: false },
+      { x: 3, y: 2, direction: Direction.NORTH, isActive: false },
+      { x: 4, y: 2, direction: Direction.NORTH, isActive: false },
 
-      { x: 0, y: 1, direction: 'north', isActive: false },
-      { x: 1, y: 1, direction: 'north', isActive: false },
-      { x: 2, y: 1, direction: 'north', isActive: false },
-      { x: 3, y: 1, direction: 'north', isActive: false },
-      { x: 4, y: 1, direction: 'north', isActive: false },
+      { x: 0, y: 1, direction: Direction.NORTH, isActive: false },
+      { x: 1, y: 1, direction: Direction.NORTH, isActive: false },
+      { x: 2, y: 1, direction: Direction.NORTH, isActive: false },
+      { x: 3, y: 1, direction: Direction.NORTH, isActive: false },
+      { x: 4, y: 1, direction: Direction.NORTH, isActive: false },
 
-      { x: 0, y: 0, direction: 'north', isActive: false },
-      { x: 1, y: 0, direction: 'north', isActive: false },
-      { x: 2, y: 0, direction: 'north', isActive: false },
-      { x: 3, y: 0, direction: 'north', isActive: false },
-      { x: 4, y: 0, direction: 'north', isActive: false },
+      { x: 0, y: 0, direction: Direction.NORTH, isActive: false },
+      { x: 1, y: 0, direction: Direction.NORTH, isActive: false },
+      { x: 2, y: 0, direction: Direction.NORTH, isActive: false },
+      { x: 3, y: 0, direction: Direction.NORTH, isActive: false },
+      { x: 4, y: 0, direction: Direction.NORTH, isActive: false },
     ];
   }
 
@@ -71,7 +72,7 @@ export class GameService {
         found.direction = this.activeTile.direction;
         this.activeTile.isActive = false;
       } else {
-        found.direction = 'north';
+        found.direction = Direction.NORTH;
       }
       this.activeTile = found;
       this.activeTile.isActive = true;
@@ -83,32 +84,32 @@ export class GameService {
       let direction = this.activeTile.direction;
       if (rotationDirection === 'left') {
         switch (direction) {
-          case 'north':
-            this.activeTile.direction = 'west';
+          case Direction.NORTH:
+            this.activeTile.direction = Direction.WEST;
             break;
-          case 'west':
-            this.activeTile.direction = 'south';
+          case Direction.WEST:
+            this.activeTile.direction = Direction.SOUTH;
             break;
-          case 'south':
-            this.activeTile.direction = 'east';
+          case Direction.SOUTH:
+            this.activeTile.direction = Direction.EAST;
             break;
-          case 'east':
-            this.activeTile.direction = 'north';
+          case Direction.EAST:
+            this.activeTile.direction = Direction.NORTH;
             break;
         }
       } else {
         switch (direction) {
-          case 'north':
-            this.activeTile.direction = 'east';
+          case Direction.NORTH:
+            this.activeTile.direction = Direction.EAST;
             break;
-          case 'east':
-            this.activeTile.direction = 'south';
+          case Direction.EAST:
+            this.activeTile.direction = Direction.SOUTH;
             break;
-          case 'south':
-            this.activeTile.direction = 'west';
+          case Direction.SOUTH:
+            this.activeTile.direction = Direction.WEST;
             break;
-          case 'west':
-            this.activeTile.direction = 'north';
+          case Direction.WEST:
+            this.activeTile.direction = Direction.NORTH;
             break;
         }
       }
@@ -121,22 +122,22 @@ export class GameService {
       let y = this.activeTile.y;
       let direction = this.activeTile.direction;
       switch (direction) {
-        case 'north':
+        case Direction.NORTH:
           if (y !== 4) {
             y = y + 1;
           }
           break;
-        case 'east':
+        case Direction.EAST:
           if (x !== 4) {
             x = x + 1;
           }
           break;
-        case 'south':
+        case Direction.SOUTH:
           if (y !== 0) {
             y = y - 1;
           }
           break;
-        case 'west':
+        case Direction.WEST:
           if (x !== 0) {
             x = x - 1;
           }

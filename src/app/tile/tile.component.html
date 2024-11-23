@@ -9,12 +9,13 @@
     <div class="row1">
       <div
         [ngStyle]="{
-          color: tileData.direction === 'north' ? '#28b8bc' : '#2a3538'
+          color:
+            tileData.direction === directionEnum.NORTH ? '#28b8bc' : '#2a3538'
         }"
       >
         <mat-icon
           aria-hidden="false"
-          aria-label="north"
+          aria-label="{directionEnum.NORTH}"
           fontIcon="expand_less"
         ></mat-icon>
       </div>
@@ -22,12 +23,13 @@
     <div class="row2">
       <div
         [ngStyle]="{
-          color: tileData.direction === 'west' ? '#28b8bc' : '#2a3538'
+          color:
+            tileData.direction === directionEnum.WEST ? '#28b8bc' : '#2a3538'
         }"
       >
         <mat-icon
           aria-hidden="false"
-          aria-label="west"
+          aria-label="{directionEnum.WEST}"
           fontIcon="chevron_left"
         ></mat-icon>
       </div>
@@ -40,12 +42,13 @@
       </div>
       <div
         [ngStyle]="{
-          color: tileData.direction === 'east' ? '#28b8bc' : '#2a3538'
+          color:
+            tileData.direction === directionEnum.EAST ? '#28b8bc' : '#2a3538'
         }"
       >
         <mat-icon
           aria-hidden="false"
-          aria-label="east"
+          aria-label="{directionEnum.EAST}"
           fontIcon="chevron_right"
         ></mat-icon>
       </div>
@@ -53,12 +56,13 @@
     <div class="row3">
       <div
         [ngStyle]="{
-          color: tileData.direction === 'south' ? '#28b8bc' : '#2a3538'
+          color:
+            tileData.direction === directionEnum.SOUTH ? '#28b8bc' : '#2a3538'
         }"
       >
         <mat-icon
           aria-hidden="false"
-          aria-label="south"
+          aria-label="{directionEnum.SOUTH}"
           fontIcon="expand_more"
         ></mat-icon>
       </div>
