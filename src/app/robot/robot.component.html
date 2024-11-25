@@ -12,13 +12,17 @@
   <div class="controls">
     <div class="controls-row">
       <button mat-raised-button color="success" (click)="rotateLeft()">
-        Left
+        <div class="rotate-left">
+          <mat-icon>rotate_90_degrees_ccw</mat-icon>
+        </div>
       </button>
       <button mat-raised-button color="success" (click)="moveRobot()">
         Move
       </button>
       <button mat-raised-button color="success" (click)="rotateRight()">
-        Right
+        <div class="rotate-right">
+          <mat-icon>rotate_90_degrees_cw</mat-icon>
+        </div>
       </button>
     </div>
     <div class="controls-row">
